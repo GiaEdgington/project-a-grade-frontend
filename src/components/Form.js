@@ -4,8 +4,8 @@ import DisplayRestaurant from '../containers/DisplayRestaurants';
 class Form extends React.Component {
 
     state = {
-        term: "",
-        location: "",
+        term: "Restaurants",
+        location: "New York",
         restaurants : []
     };
 
@@ -28,27 +28,33 @@ class Form extends React.Component {
 
         fetch(`http://localhost:3000/restaurants?term=${term}&location=${location}`)
         .then(response => response.json())
-        .then(response => this.filterRestaurants(response))
+        .then(data => this.filterRestaurants(data))
     }
 
-    filterRestaurants = (response) => {
+    filterRestaurants = (data) => {
         var token = 'ecmGOZdhBzQna3iHZAWezOPHX';
         let restaurants = [];
-        response.map(restaurant => {
-            return restaurants.push(restaurant.name);
+        data.map(restaurant => {
+            restaurants.push(restaurant.name);
         })
         //console.log(restaurants);
-
-        restaurants.forEach(restaurant => {
-
-            fetch(`https://data.cityofnewyork.us/resource/43nn-pn8j.json?dba=${restaurant}`, {
-                headers: {
-                    'Accept': 'application/json',
-                    'X-App-Token': token
-                }
-            })
-            .then(response => response.json())
-            .then(console.log(response));
+        //var dataNYC = [];
+        fetch('https://data.cityofnewyork.us/resource/43nn-pn8j.json', {
+            headers: {
+                'Host': 'data.seattle.gov',
+                'Content-type': 'application/json',
+                'Accept': 'application/json',
+                'X-App-Token': token
+            }
+        })
+        .then(response => {
+            return response.json()
+        })
+        .then(data => {
+            console.log(data[0].grade)
+        })
+        .catch(err => {
+            console.log(err)
         })
     }
 
@@ -57,8 +63,8 @@ class Form extends React.Component {
             <div>
                 <div>
                     <form onSubmit={this.handleSubmit}>
-                        <input type="text" placeholder="Find Restaurants" onChange={this.handleTerm}></input>
-                        <input type="text" placeholder="Location" onChange={this.handleLocation}></input>
+                        <input type="text" placeholder="Find Restaurants" onChange={this.handleTerm} ></input>
+                        <input type="text" placeholder="Location" onChange={this.handleLocation} ></input>
                         <button>Search</button>
                     </form>
                 </div>

@@ -38,7 +38,8 @@ class Form extends React.Component {
             restaurants.push(restaurant.name);
         })
         //console.log(restaurants);
-        //var dataNYC = [];
+        var gradeA= [];
+
         fetch('https://data.cityofnewyork.us/resource/43nn-pn8j.json', {
             headers: {
                 'Host': 'data.seattle.gov',
@@ -47,14 +48,14 @@ class Form extends React.Component {
                 'X-App-Token': token
             }
         })
+        .then(response => response.json())
         .then(response => {
-            return response.json()
-        })
-        .then(data => {
-            console.log(data[0].grade)
-        })
-        .catch(err => {
-            console.log(err)
+            response.forEach(restaurant => {
+                if(restaurant.grade === 'A'){
+                    gradeA.push(restaurant);
+                }
+            })
+            this.setState({ restaurants: gradeA })
         })
     }
 

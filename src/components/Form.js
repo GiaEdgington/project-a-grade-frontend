@@ -28,8 +28,27 @@ class Form extends React.Component {
 
         fetch(`http://localhost:3000/restaurants?term=${term}&location=${location}`)
         .then(response => response.json())
-        .then(response => {
-            this.setState( { restaurants: response})
+        .then(response => this.filterRestaurants(response))
+    }
+
+    filterRestaurants = (response) => {
+        var token = 'ecmGOZdhBzQna3iHZAWezOPHX';
+        let restaurants = [];
+        response.map(restaurant => {
+            return restaurants.push(restaurant.name);
+        })
+        //console.log(restaurants);
+
+        restaurants.forEach(restaurant => {
+
+            fetch(`https://data.cityofnewyork.us/resource/43nn-pn8j.json?dba=${restaurant}`, {
+                headers: {
+                    'Accept': 'application/json',
+                    'X-App-Token': token
+                }
+            })
+            .then(response => response.json())
+            .then(console.log(response));
         })
     }
 

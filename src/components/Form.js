@@ -9,6 +9,7 @@ class Form extends React.Component {
         restaurants : []
     };
 
+
     handleTerm = (event) => {
         this.setState({
             term: event.target.value
@@ -50,12 +51,27 @@ class Form extends React.Component {
         })
         .then(response => response.json())
         .then(response => {
+            console.log(response.length);
             response.forEach(restaurant => {
                 if(restaurant.grade === 'A'){
-                    gradeA.push(restaurant);
+                    gradeA.push(restaurant.dba);
                 }
             })
-            this.setState({ restaurants: gradeA })
+
+        let gradeArestaurants = [];
+        //console.log(gradeA.includes("CLINTON STREET BAKING COMPANY"));
+        data.forEach(restaurant => {
+            //console.log(restaurant.name);
+            
+            if(gradeA.includes(restaurant.name)) {
+                gradeArestaurants.push(restaurant);
+            } else {
+                //send to link : https://a816-health.nyc.gov/ABCEatsRestaurants/#/Search
+                console.log('false');
+            }
+        })  
+        //console.log(gradeArestaurants.length);
+            //this.setState({ restaurants: gradeA })
         })
     }
 

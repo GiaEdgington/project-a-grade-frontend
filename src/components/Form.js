@@ -77,7 +77,7 @@ class Form extends React.Component {
 
     render(){
         return(
-            <div>
+            <div className="container">
                 <div>
                     <form onSubmit={this.handleSubmit}>
                         <input type="text" placeholder="Find Restaurants" onChange={this.handleTerm} ></input>

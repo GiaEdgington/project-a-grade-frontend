@@ -26,7 +26,6 @@
 
 .container {
   width: 100%;
-  border: 1px red solid;
 }
 
 form {
@@ -48,9 +47,18 @@ form {
 
 input {
   width: 20em;
-  padding: 1em;
+  padding: 1.6em;
 }
 
 button {
-  padding: 1.1em 2em;
+  border: 1px red solid;
+  background-color: red;
+  padding: 1.15em;
+  vertical-align: middle;
+}
+
+button svg {
+  fill: white;
+  font-weight: bold;
+  vertical-align: middle;
 }

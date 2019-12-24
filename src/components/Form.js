@@ -1,5 +1,6 @@
 import React from 'react';
 import DisplayRestaurant from '../containers/DisplayRestaurants';
+import Browse from './Browse';
 
 class Form extends React.Component {
 
@@ -88,6 +89,7 @@ class Form extends React.Component {
                 </div>
                 <div>
                     <DisplayRestaurant />
+                    <Browse />
                 </div>
                 
             </div>

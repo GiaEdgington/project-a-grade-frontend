@@ -72,3 +72,7 @@ button svg {
   font-weight: bold;
   vertical-align: middle;
 }
+
+.topRated h2 {
+  text-align: center;
+}

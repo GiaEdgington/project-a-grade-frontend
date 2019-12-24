@@ -24,6 +24,10 @@
 
 /* my css */
 
+ul {
+  list-style-type: none;
+}
+
 .container {
   width: 100%;
 }
@@ -75,4 +79,17 @@ button svg {
 
 .topRated h2 {
   text-align: center;
+}
+
+.topRated ul  {
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+
+.topRated ul li {
+  width: 10em;
+  height: 10em;
+  border: 1px black solid;
 }

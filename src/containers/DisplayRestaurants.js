@@ -10,8 +10,8 @@ class DisplayRestaurants extends React.Component {
             return <Restaurant key={index} name={restaurant.name} image={restaurant.image_url} rating={restaurant.rating} phone={restaurant.display_phone} location={restaurant.location.address1 + " " + restaurant.location.city + ", " + restaurant.location.zip_code}  />
         })
         return(
-            <div>
-                {restaurants};
+            <div className="restaurantList">
+                {restaurants}
             </div>
         )
     }

@@ -5,8 +5,8 @@ import Browse from './Browse';
 class Form extends React.Component {
 
     state = {
-        term: "Restaurants",
-        location: "New York",
+        term: "",
+        location: "",
         restaurants : []
     };
 
@@ -25,15 +25,20 @@ class Form extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
+        console.log('test');
         var term = this.state.term;
         var location = this.state.location;
 
         fetch(`http://localhost:3000/restaurants?term=${term}&location=${location}`)
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(data => {
+            console.log(data);
+            this.setState({ restaurants: data })
+        })
     }
 
     render(){
+        //console.log(this.state.restaurants);
         return(
             <div className="container">
                 <div className= "formContainer">
@@ -45,7 +50,7 @@ class Form extends React.Component {
                     </form>
                 </div>
                 <div>
-                    <DisplayRestaurant />
+                    <DisplayRestaurant restaurants={ this.state.restaurants }/>
                     <Browse />
                 </div>
                 

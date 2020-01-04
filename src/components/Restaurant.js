@@ -9,10 +9,11 @@ class Restaurant extends React.Component {
                         <span className="helper"></span><img src={this.props.image} alt=""></img>
                     </div>
                     <div className="info">
-                        <h3>{this.props.name}</h3>
+                        <h2>{this.props.name}</h2>
                         <p>{this.props.rating}</p>
                         <p>{this.props.category}</p>
                         <p>{this.props.location}</p>
+                        <p>{this.props.phone}</p>
                     </div>
                 </div> 
         )

@@ -96,22 +96,23 @@ button svg {
 
 .restaurantList {
   width: 40%;
-  margin: 0 auto;
+  margin: 4em auto 0;
 }
 
 .restaurantCard {
   width: 100%;
   height: 15em;
-  border: 1px black solid;
-  margin-top: 4em;
+  border-top: 1px grey solid;
+  margin-bottom: 4em;
 }
 
 .restaurantImg {
   height: 100%;
   width: 15em;
-  border: 1px black solid;
   float: left;
   margin-right: 2em;
+  margin-top: 1.5em;
+  background-color: rgb(207, 204, 13);
 }
 
 .restaurantImg img {
@@ -127,10 +128,11 @@ button svg {
 }
 
 .restaurantCard .info {
+  margin-top: 0;
   padding-left: 2em;
 }
 
 .restaurantCard h3 {
-  margin-top: 0;
+  margin-top: 1em;
 }
 

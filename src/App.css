@@ -96,7 +96,8 @@ button svg {
 
 .restaurantList {
   width: 40%;
-  margin: 4em auto 0;
+  margin: 4em auto 3em;
+  border-bottom: 1px grey solid;
 }
 
 .restaurantCard {

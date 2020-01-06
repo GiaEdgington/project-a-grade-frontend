@@ -113,7 +113,7 @@ button svg {
   float: left;
   margin-right: 2em;
   margin-top: 1.5em;
-  background-color: rgb(207, 204, 13);
+  background-color: rgb(240, 194, 45);
 }
 
 .restaurantImg img {
@@ -133,8 +133,14 @@ button svg {
   padding-left: 2em;
 }
 
-.restaurantCard h3 {
+.restaurantCard .info p {
+  font-weight: bolder;
+  margin: .5em;
+}
+
+.restaurantCard h2 {
   margin-top: 1em;
+  color: rgb(133, 161, 142);
   margin-bottom: 0;
   padding: 0;
 }

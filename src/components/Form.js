@@ -25,7 +25,6 @@ class Form extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log('test');
         var term = this.state.term;
         var location = this.state.location;
 
@@ -38,7 +37,6 @@ class Form extends React.Component {
     }
 
     render(){
-        //console.log(this.state.restaurants);
         return(
             <div className="container">
                 <div className= "formContainer">

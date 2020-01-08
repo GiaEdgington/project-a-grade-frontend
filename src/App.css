@@ -23,6 +23,9 @@
 }
 
 /* my css */
+body {
+  background-color: rgb(235, 233, 213);
+}
 
 ul {
   list-style-type: none;

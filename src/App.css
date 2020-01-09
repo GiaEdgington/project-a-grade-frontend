@@ -80,6 +80,10 @@ button svg {
   vertical-align: middle;
 }
 
+.topRated {
+  margin-bottom: 2em;
+}
+
 .topRated h2 {
   text-align: center;
 }
@@ -146,5 +150,11 @@ button svg {
   color: rgb(133, 161, 142);
   margin-bottom: 0;
   padding: 0;
+}
+
+footer {
+  height: 3em;
+  width: 100%;
+  background-color: rgb(163, 189, 139);
 }
 

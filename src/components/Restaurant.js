@@ -10,7 +10,8 @@ class Restaurant extends React.Component {
                     </div>
                     <div className="info">
                         <h2>{this.props.name}</h2>
-                        <p>Rating: {this.props.rating}</p>
+                        <p>Rating: {this.props.rating} - {this.props.reviews} reviews</p>
+                        <p>Price: {this.props.price}</p>
                         <p>Cuisine: {this.props.category}</p>
                         <p>Address: {this.props.location}</p>
                         <p>Phone Number: {this.props.phone}</p>

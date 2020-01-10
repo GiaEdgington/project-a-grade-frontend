@@ -145,9 +145,9 @@ button svg {
   margin: .5em;
 }
 
-.restaurantCard h2 {
+.restaurantCard h3 {
   margin-top: 1em;
-  color: rgb(133, 161, 142);
+  color: rgb(128, 123, 58);
   margin-bottom: 0;
   padding: 0;
 }

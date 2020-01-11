@@ -7,7 +7,8 @@ class Form extends React.Component {
     state = {
         term: "",
         location: "",
-        restaurants : []
+        restaurants : [],
+        price : ""
     };
 
 
@@ -23,12 +24,19 @@ class Form extends React.Component {
         })
     };
 
+    handleCheck = (event) => {
+        this.setState({
+            price: event.target.value
+        })
+    }
+
     handleSubmit = (event) => {
         event.preventDefault();
         var term = this.state.term;
         var location = this.state.location;
+        var price = this.state.price;
 
-        fetch(`http://localhost:3000/restaurants?term=${term}&location=${location}`)
+        fetch(`http://localhost:3000/restaurants?term=${term}&location=${location}&${price}`)
         .then(response => response.json())
         .then(data => {
             //console.log(data);
@@ -37,6 +45,7 @@ class Form extends React.Component {
     }
 
     render(){
+        console.log(this.state.price);
         return(
             <div className="container">
                 <div className= "formContainer">
@@ -54,12 +63,10 @@ class Form extends React.Component {
                         </div>
                     </form>
                 </div>
-                
                 <div>
                     <DisplayRestaurant restaurants={ this.state.restaurants }/>
                     <Browse />
                 </div>
-                
             </div>
         )
     }

@@ -60,7 +60,13 @@ form {
   vertical-align: middle;
 }
 
-input {
+.formContainer p {
+  color: white;
+  font-weight: bold;
+}
+
+
+.formContainer input {
   width: 20em;
   padding: 1.6em;
   outline: none;
@@ -78,6 +84,27 @@ button svg {
   fill: white;
   font-weight: bold;
   vertical-align: middle;
+}
+
+ .filter input[type='checkbox'] {
+  width: 2.5em;
+  height: 2.5em;
+  vertical-align: middle;
+  background-color: white;
+  margin-right: 2em;
+  padding: 0;
+}
+
+label {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.filter p {
+  color: black;
 }
 
 .topRated {
@@ -125,7 +152,7 @@ button svg {
 
 .restaurantImg img {
   vertical-align: middle;
-  max-width: 100%;
+  width: 100%;
   max-height: 100%;
 }
 

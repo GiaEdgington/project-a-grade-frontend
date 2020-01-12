@@ -8,7 +8,7 @@ class Form extends React.Component {
         term: "",
         location: "",
         restaurants : [],
-        price : ""
+        price : []
     };
 
 
@@ -25,9 +25,13 @@ class Form extends React.Component {
     };
 
     handleCheck = (event) => {
-        this.setState({
-            price: event.target.value
-        })
+        if( !this.state.price.includes(event.target.value)){
+            let price_values = this.state.price.concat(event.target.value);
+            this.setState({ price: price_values });
+        } else {
+            let price_values = this.state.price.filter(val => val !== event.target.value);
+            this.setState({ price: price_values });
+        }
     }
 
     handleSubmit = (event) => {

@@ -39,6 +39,8 @@ form {
   display: inline-block;
   padding: 0;
   margin-top: 20em;
+  margin-bottom: 0;
+  border: 1px red solid;
 }
 
 .formContainer {
@@ -58,6 +60,7 @@ form {
   border: 2px white solid;
   padding: .9em .1em .85em;
   vertical-align: middle;
+  margin-bottom: 0;
 }
 
 .formContainer p {
@@ -72,6 +75,32 @@ form {
   padding: 1.6em;
   outline: none;
   border: 1px white solid;
+  margin-bottom: 0;
+}
+
+.currentLocation {
+  display: none;
+  width: 19.5em;
+  height: 2.5em;
+  padding: .25em .10em;
+  margin-left: auto;
+  margin-top: -1.1em;
+  background-color: white;
+}
+
+.currentLocation svg {
+  width: 1em;
+  margin-left: 1.2em;
+  margin-top: 1.1em;
+}
+
+.currentLocation p {
+  color: black;
+  margin-top: -1.7em;
+  margin-left: 1.75em;
+  padding: 0 1.7em;
+  font-size: .65em;
+  font-weight: normal;
 }
 
 button {

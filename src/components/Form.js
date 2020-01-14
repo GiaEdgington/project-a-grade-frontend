@@ -24,6 +24,30 @@ class Form extends React.Component {
         coordinates.style.display="block";
     }
 
+    handleCoordinates = () => {
+        //console.log("test1");
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(this.searchCoordinates);
+          }
+    }
+
+    errorHandler = (err) => {
+        console.warn(err.code);
+    }
+
+    searchCoordinates = (position) => {
+        var term = this.state.term;
+        var price = this.state.price;
+        console.log(position.coords.latitude + "," + position.coords.longitude);
+
+        fetch(`http://localhost:3000/restaurants?term=${term}&latitude=${position.coords.latitude}&longitude=${position.coords.longitude}&price=${price}`)
+        .then(response => response.json())
+        .then(data => {
+            //console.log(data);
+            this.setState({ restaurants: data, coordinates: true })
+        })
+    }
+
     handleLocation = (event) => {
         this.setState({
             location: event.target.value
@@ -64,14 +88,14 @@ class Form extends React.Component {
                         <span>|</span>
                         <input type="text" placeholder="Location" onClick={this.handleClick} onChange={this.handleLocation} ></input>
                         <button><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21.172 24l-7.387-7.387c-1.388.874-3.024 1.387-4.785 1.387-4.971 0-9-4.029-9-9s4.029-9 9-9 9 4.029 9 9c0 1.761-.514 3.398-1.387 4.785l7.387 7.387-2.828 2.828zm-12.172-8c3.859 0 7-3.14 7-7s-3.141-7-7-7-7 3.14-7 7 3.141 7 7 7z"/></svg></button>
-                        <div className="currentLocation">
+                        <div className="currentLocation" onClick={this.handleCoordinates}>
                             <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-labelledby="title"
                             aria-describedby="desc" role="img" xmlns="http://www.w3.org/1999/xlink">
                             <title>Direction Arrow GPS</title>
                             <desc>A line styled icon from Orion Icon Library.</desc>
                             <path d="M29 35l3 22L59 5 7 32l22 3z"
-                            stroke-width="2" stroke-miterlimit="10" stroke="#202020" fill="black" data-name="layer1"
-                            stroke-linejoin="round" stroke-linecap="round"></path>
+                            strokeWidth="2" strokeMiterlimit="10" stroke="#202020" fill="black" data-name="layer1"
+                            strokeLinejoin="round" strokeLinecap="round"></path>
                             </svg>
                             <p>Current Location</p>
                         </div>

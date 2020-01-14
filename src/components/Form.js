@@ -31,10 +31,6 @@ class Form extends React.Component {
           }
     }
 
-    errorHandler = (err) => {
-        console.warn(err.code);
-    }
-
     searchCoordinates = (position) => {
         var term = this.state.term;
         var price = this.state.price;

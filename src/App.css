@@ -154,7 +154,9 @@ label {
 .topRated ul li {
   width: 10em;
   height: 10em;
-  border: 1px black solid;
+  background-color: orange;
+  color: white;
+  text-align: center;
 }
 
 .restaurantList {

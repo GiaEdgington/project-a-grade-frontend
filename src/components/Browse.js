@@ -7,10 +7,10 @@ class Browse extends React.Component {
             <div className="topRated">
                 <h2>Top Rated in your Area</h2>
                 <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li>Hot and New</li>
+                    <li>Hot and New</li>
+                    <li>Hot and New</li>
+                    <li>Hot and New</li>
                 </ul>
             </div>
         )

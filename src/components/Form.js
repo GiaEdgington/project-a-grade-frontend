@@ -106,7 +106,7 @@ class Form extends React.Component {
                 </div>
                 <div>
                     <DisplayRestaurant restaurants={ this.state.restaurants }/>
-                    <Browse />
+                    <Browse location={this.state.location}/>
                 </div>
             </div>
         )

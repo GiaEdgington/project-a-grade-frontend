@@ -1,4 +1,5 @@
 import React from 'react';
+import Popular from '../components/Popular';
 
 class Browse extends React.Component {
 
@@ -7,28 +8,26 @@ class Browse extends React.Component {
     }
 
     componentDidMount = () => {
-        console.log('test');
-        fetch('http://localhost:3000/new')
+        //console.log('test');
+        fetch('http://localhost:3000/new_restaurants?limit=4')
         .then(response => response.json())
         .then(data => {
             //console.log(data);
-            this.setState({ newRestaurants: data })
+            this.setState({ newRestaurants: data.slice(0, 4) })
         })
     }
 
     render(){
-        const newAndHot = this.state.newRestaurants.forEach(restaurant => {
-            return <li>{restaurant.image_url}</li>
+        //console.log(this.state.newRestaurants);
+        const newAndHot = this.state.newRestaurants.forEach((restaurant, index) => {
+            console.log(restaurant.name);
+            return <Popular key = {index} restaurants={this.state.newRestaurants} />
         })
         return(
             <div className="topRated">
-                <h2>Top Rated in your Area</h2>
+                <h2>New and Popular in New York</h2>
                 <ul>
                     {newAndHot}
-                    {/* <li>Hot and New</li>
-                    <li>Hot and New</li>
-                    <li>Hot and New</li>
-                    <li>Hot and New</li> */}
                 </ul>
             </div>
         )

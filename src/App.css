@@ -166,7 +166,26 @@ label {
 }
 
 .topRated img:hover {
-  opacity: .5;
+  opacity: .2;
+}
+
+.list .hover {
+  position: relative;
+  width: 12em;
+  height: 2em;
+  padding: .3em 0;
+  line-height: 1.5em;
+  text-align: center;
+  letter-spacing: 1px;
+  color: black;
+  font-weight: bold;
+  bottom:50%;
+  left:0;
+  visibility: hidden;
+}
+
+.list:hover .hover{
+  visibility: visible;
 }
 
 .restaurantList {

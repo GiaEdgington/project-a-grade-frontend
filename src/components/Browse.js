@@ -18,7 +18,7 @@ class Browse extends React.Component {
     }
 
     render(){
-        console.log(this.state.newRestaurants);
+        //console.log(this.state.newRestaurants);
         const newAndHot = this.state.newRestaurants.map((restaurant, index) => {
             //console.log(restaurant.name);
             return <Popular key = {index} name={restaurant.name} image={restaurant.image_url} />

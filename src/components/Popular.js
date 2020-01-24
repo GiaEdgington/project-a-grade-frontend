@@ -5,9 +5,9 @@ const Popular = (props) => {
     //console.log(props);
 
     return(
-        <div class='list'>
+        <div className='list'>
             <li><img src={props.image} alt=""></img></li>
-            <p class="hover">{props.name}</p>
+            <p className="hover">{props.name}</p>
         </div>
         
     )

@@ -142,23 +142,31 @@ label {
 
 .topRated h2 {
   text-align: center;
-  margin-bottom: 2em;
+  margin-top: 0;
+  margin-bottom: 1em;
 }
 
 .topRated ul  {
-  width: 70%;
+  width: 60%;
   display: flex;
   justify-content: space-around;
-  margin: 1em auto 0;
+  margin: 0 auto;
 }
 
 .topRated ul li {
-  border: 1px red solid;
-  width: 10em;
-  height: 10em;
-  background-color: orange;
+  width: 12em;
+  height: 12em;
   color: black;
   text-align: center;
+}
+
+.topRated img {
+  width: 100%;
+  height: 12em;
+}
+
+.topRated img:hover {
+  opacity: .5;
 }
 
 .restaurantList {

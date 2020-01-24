@@ -102,12 +102,13 @@ class Form extends React.Component {
                             <label>$$$<input type="checkbox" value='3' onChange={this.handleCheck}></input></label>
                             <label>$$$$<input type="checkbox" value='4' onChange={this.handleCheck}></input></label>
                         </div>
-                    </form>
+                    </form> 
                 </div>
                 <div>
                     <DisplayRestaurant restaurants={ this.state.restaurants }/>
                     <Browse />
                 </div>
+                <footer></footer>
             </div>
         )
     }

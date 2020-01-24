@@ -1,13 +1,12 @@
 import React from 'react';
-import { render } from '@testing-library/react';
 
 const Popular = (props) => {
 
-    console.log(props);
+    //console.log(props);
 
     return(
         <div>
-            <li>{this.props.restaurant.name}</li>
+            <li><img src={props.image} alt=""></img></li>
         </div>
         
     )

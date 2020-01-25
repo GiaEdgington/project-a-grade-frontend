@@ -9,7 +9,6 @@ const Popular = (props) => {
             <li><img src={props.image} alt=""></img></li>
             <p className="hover">{props.name}</p>
         </div>
-        
     )
 }
 

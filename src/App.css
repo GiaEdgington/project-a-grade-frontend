@@ -174,10 +174,11 @@ label {
   width: 12em;
   height: 2em;
   padding: .3em 0;
-  line-height: 1.5em;
+  line-height: 1.2em;
   text-align: center;
   letter-spacing: 1px;
-  color: black;
+  color: white;
+  background-color: rgb(189, 169, 133);
   font-weight: bold;
   bottom:50%;
   left:0;
@@ -242,7 +243,7 @@ label {
 footer {
   height: 3em;
   width: 100%;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   background-color: rgb(163, 189, 139);
 }

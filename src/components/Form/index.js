@@ -1,6 +1,6 @@
 import React from 'react';
-import DisplayRestaurant from '../containers/DisplayRestaurants';
-import Browse from './Browse';
+import DisplayRestaurant from '../../pages/DisplayRestaurant';
+import Browse from '../Browse';
 
 class Form extends React.Component {
 

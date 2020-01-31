@@ -1,5 +1,5 @@
 import React from 'react';
-import Popular from '../components/Popular';
+import Popular from '../Popular';
 
 class Browse extends React.Component {
 
